@@ -137,65 +137,61 @@ Como seu treinamento indicou, existem três maneiras de implementar a MFA: com p
 
 O Adatum orientou Holly a habilitar a MFA para todos os seus usuários do Microsoft 365 - internos e externos. No entanto, para testar a implementação do projeto piloto do Microsoft 365 da Adatum, a Holly quer isentar os membros do grupo do projeto piloto da M365 da exigência de usar MFA para entrar. Após concluir o projeto piloto, Holly planeja atualizar a política removendo a exclusão desse grupo do requisito da MFA. A política também incluirá duas outras exigências. Exigirá a MFA para todos os aplicativos de nuvem e exigirá a MFA mesmo que um usuário faça login a partir de um local confiável. 
 
-1. No exercício de laboratório anterior, você estava trabalhando na LON-DC1. Nesta tarefa, você voltará a trabalhar na máquina Client 1. <br/>
-
-    Alterne para **LON-CL1**.
-
-2. Na VM LON-CL1, o **centro de administração do Microsoft 365** ainda estará aberto no navegador Microsoft Edge da tarefa anterior. Você deve estar conectado ao Microsoft 365 como **Holly Dickson**.
+1. Na VM LON-CL1, o **centro de administração do Microsoft 365** ainda estará aberto no navegador Microsoft Edge da tarefa anterior. Você deve estar conectado ao Microsoft 365 como **Holly Dickson**.
    
-3. No **centro de administração do Microsoft 365**, na seção **Centros de administração** no painel de navegação, selecione **Identidade**. Isso abre o centro de administração do Microsoft Entra em uma nova guia do navegador. Se uma janela **Escolher uma conta** for exibida, selecione **conta de Holly Dickson**.
+2. No **centro de administração do Microsoft 365**, na seção **Centros de administração** no painel de navegação, selecione **Identidade**. Isso abre o centro de administração do Microsoft Entra em uma nova guia do navegador. Se uma janela **Escolher uma conta** for exibida, selecione **conta de Holly Dickson**.
 
-4. No **centro de administração do Microsoft Entra**, selecione **Proteção** no painel de navegação e, a seguir, selecione **Acesso Condicional**.
+3. No **centro de administração do Microsoft Entra**, selecione **Proteção** no painel de navegação e, a seguir, selecione **Acesso Condicional**.
 
-5. Na página **Acesso Condicional | Visão geral**, selecione **Políticas** no painel de navegação do meio.
+4. Na página **Acesso Condicional | Visão geral**, selecione **Políticas** no painel de navegação do meio.
 
-6. Na página **Acesso condicional | Políticas**, na barra de menus na parte superior da página, selecione **+ Criar nova política**.
+5. Na página **Acesso condicional | Políticas**, na barra de menus na parte superior da página, selecione **+ Criar nova política**.
 
-7. Na janela **Nova Política de Acesso Condicional**, insira **MFA para todos os usuários do Microsoft 365** no campo **Nome**.
+6. Na janela **Nova Política de Acesso Condicional**, insira **MFA para todos os usuários do Microsoft 365** no campo **Nome**.
 
-8. Você começará por definir a exigência de MFA para os usuários. No grupo **Usuários**, selecione **0 usuários e grupos selecionados**. Fazer isso irá exibir duas guias: **Incluir** e **Isentar**.
+7. Você começará por definir a exigência de MFA para os usuários. No grupo **Usuários**, selecione **0 usuários e grupos selecionados**. Fazer isso irá exibir duas guias: **Incluir** e **Isentar**.
 
-9. Na guia **Incluir**, selecione **Todos os usuários**. Observe a mensagem de aviso que aparece. Você abordará isso nas próximas duas etapas.
+8. Na guia **Incluir**, selecione **Todos os usuários**. Observe a mensagem de aviso que aparece. Você abordará isso nas próximas duas etapas.
 
-10. Selecione a guia **Isentar**. Para evitar o bloqueio do sistema, como a mensagem de aviso anterior indicou, você vai querer isentar seus administradores globais — nesse caso, a Holly. Durante os testes, a Holly também vai querer isentar os outros membros do grupo do projeto piloto do Microsoft 365, por uma questão de conveniência. Depois que o Microsoft 365 entrar em operação no Adatum, Holly removerá o grupo de projetos piloto da lista Excluir nesta política de Acesso Condicional e simplesmente se excluirá, o Administrador MOD e alguns outros administradores globais. Mas por enquanto, Holly quer excluir todo o grupo de projetos piloto. <br/>
+9. Selecione a guia **Isentar**. Para evitar o bloqueio do sistema, como a mensagem de aviso anterior indicou, você vai querer isentar seus administradores globais — nesse caso, a Holly. Durante os testes, a Holly também vai querer isentar os outros membros do grupo do projeto piloto do Microsoft 365, por uma questão de conveniência. Depois que o Microsoft 365 entrar em operação no Adatum, Holly removerá o grupo de projetos piloto da lista Excluir nesta política de Acesso Condicional e simplesmente se excluirá, o Administrador MOD e alguns outros administradores globais. Mas por enquanto, Holly quer excluir todo o grupo de projetos piloto. <br/>
 
     Para fazer isso, marque a caixa de seleção **Usuários e grupos**. 
 
-11. Na janela **Selecionar usuários e grupos excluídos** que aparece, você deseja selecionar o grupo de projetos piloto do Microsoft 365. A guia **Todos** é exibida por padrão. Para localizar o grupo do projeto piloto rapidamente, selecione a guia **Grupos**. Na lista de grupos ativos, marque a caixa de seleção ao lado do grupo **Projeto piloto do M365** e, em seguida, selecione o botão **Selecionar** na parte inferior da janela. De volta à janela **Nova Política de Acesso Condicional**, observe a mensagem que aparece na seção **Usuários**. 
+10. Na janela **Selecionar usuários e grupos excluídos** que aparece, você deseja selecionar o grupo de projetos piloto do Microsoft 365. A guia **Todos** é exibida por padrão. Para localizar o grupo do projeto piloto rapidamente, selecione a guia **Grupos**. Na lista de grupos ativos, marque a caixa de seleção ao lado do grupo **Projeto piloto do M365** e, em seguida, selecione o botão **Selecionar** na parte inferior da janela. De volta à janela **Nova Política de Acesso Condicional**, observe a mensagem que aparece na seção **Usuários**. 
 
-12. Agora, você vai definir a exigência de MFA para todos os aplicativos de nuvem. Na seção **Recursos de destino**, selecione **Nenhum recurso de destino selecionado**. Fazer isso irá exibir duas guias: **Incluir** e **Isentar**.
+11. Agora, você vai definir a exigência de MFA para todos os aplicativos de nuvem. Na seção **Recursos de destino**, selecione **Nenhum recurso de destino selecionado**. Fazer isso irá exibir duas guias: **Incluir** e **Isentar**.
 
-13. Selecione o menu suspenso **Selecione a que se aplica essa política** para ver as várias opções no menu suspenso. Selecione **Recursos (anteriormente aplicativos de nuvem).** 
+12. Selecione o menu suspenso **Selecione a que se aplica essa política** para ver as várias opções no menu suspenso. Selecione **Recursos (anteriormente aplicativos de nuvem).** 
 
-14. Na guia **Incluir**, observe que a configuração padrão é **Nenhum**. Se você não alterou essa configuração, nenhum aplicativo de nuvem exigiria MFA - e isso inclui o Microsoft 365. Portanto, mesmo que você criasse essa política e selecionasse a opção de exigir MFA para todos os usuários, mas deixasse essa configuração de **Recursos de destino** como **Nenhum**, nenhum usuário que entrasse no Microsoft 365 precisaria usar a MFA. <br/>
+13. Na guia **Incluir**, observe que a configuração padrão é **Nenhum**. Se você não alterou essa configuração, nenhum aplicativo de nuvem exigiria MFA - e isso inclui o Microsoft 365. Portanto, mesmo que você criasse essa política e selecionasse a opção de exigir MFA para todos os usuários, mas deixasse essa configuração de **Recursos de destino** como **Nenhum**, nenhum usuário que entrasse no Microsoft 365 precisaria usar a MFA. <br/>
 
     Na guia **Incluir**, clique na opção **Selecionar recursos**. Isso exibe duas seções: **Editar filtro** e **Selecionar**. Na seção **Selecionar**, selecione **Nenhum**. 
 
-15. No painel **Selecionar recursos** que aparece, role pela lista de aplicativos para ver todos os diferentes aplicativos para os quais você poderia exigir a MFA. **NÃO selecione nenhum dos aplicativos.** Estamos fazendo você percorrer essa lista apenas para ter uma ideia de quão granular você pode obter ao exigir MFA caso decida limitar a MFA a determinados aplicativos em suas implantações do mundo real.  <br/>
+14. No painel **Selecionar recursos** que aparece, role pela lista de aplicativos para ver todos os diferentes aplicativos para os quais você poderia exigir a MFA. **NÃO selecione nenhum dos aplicativos.** Estamos fazendo você percorrer essa lista apenas para ter uma ideia de quão granular você pode obter ao exigir MFA caso decida limitar a MFA a determinados aplicativos em suas implantações do mundo real.  <br/>
 
     No caso da Adatum, a Holly quer exigir a MFA para todos os aplicativos de nuvem, o que costuma ser um cenário corporativo mais comum do que selecionar aplicativos específicos. Na guia **Incluir**, clique na opção **Todos os recursos (antes "Todos os aplicativos de nuvem")**. A Adatum não irá isentar nenhum aplicativo de nuvem da autenticação multifator (MFA). Você pode selecionar a guia **Excluir** se quiser ver as opções que ela fornece. Ele funciona basicamente da mesma forma que a guia **Incluir**. Você pode exibir essa guia, mas NÃO selecione nenhum aplicativo de nuvem para exclusão. 
 
-16. Para terminar, você vai definir a exigência de MFA para todos os locais de login do usuário. Em alguns cenários, as organizações talvez só exijam a MFA se um usuário fizer login a partir de um local não confiável. No entanto, o Adatum deseja exigir MFA para todos os usuários incluídos, independentemente do local de onde eles entram. <br/>
+15. Para terminar, você vai definir a exigência de MFA para todos os locais de login do usuário. Em alguns cenários, as organizações talvez só exijam a MFA se um usuário fizer login a partir de um local não confiável. No entanto, o Adatum deseja exigir MFA para todos os usuários incluídos, independentemente do local de onde eles entram. <br/>
 
     Em **Condições**, selecione **0 condições selecionadas**. Fazer isso vai exibir uma lista de possíveis condições que a política irá verificar. Para esse exercício de laboratório, na condição **Locais**, selecione **Não configurados**. Fazer isso vai exibir um botão de alternância para **Configurar** e duas guias: **Incluir** e **Isentar**. Ambas as guias estão desabilitadas no momento.
 
-17. Defina botão de alternância **Configurar** como **Sim**, o que habilita as duas guias. 
+16. Defina botão de alternância **Configurar** como **Sim**, o que habilita as duas guias. 
 
-18. Na guia **Incluir**, verifique se **qualquer rede ou local** está selecionado (selecione-o, se necessário). Selecione a guia **Isentar**. Se a sua organização reconhecer endereços ou intervalos de endereços IP específicos como "confiáveis", você poderá excluir a exigência de MFA se um usuário fizer login a partir de um desses locais. No entanto, o Adatum deseja exigir MFA para todas as tentativas de entrada do usuário, independentemente de sua localização. Isso incluirá tanto os logins de usuários internos quanto externos. Verifique se a opção **Redes e locais selecionados** está selecionada e, na seção **Selecionar**, verifique se ela diz **Nenhuma**. Ao especificar que nenhum local está selecionado, essa configuração garante que nenhum local fique isento da MFA. 
+17. Na guia **Incluir**, verifique se **qualquer rede ou local** está selecionado (selecione-o, se necessário). Selecione a guia **Isentar**. Se a sua organização reconhecer endereços ou intervalos de endereços IP específicos como "confiáveis", você poderá excluir a exigência de MFA se um usuário fizer login a partir de um desses locais. No entanto, o Adatum deseja exigir MFA para todas as tentativas de entrada do usuário, independentemente de sua localização. Isso incluirá tanto os logins de usuários internos quanto externos. Verifique se a opção **Redes e locais selecionados** está selecionada e, na seção **Selecionar**, verifique se ela diz **Nenhuma**. Ao especificar que nenhum local está selecionado, essa configuração garante que nenhum local fique isento da MFA. 
 
-19. Na seção **Controles de acesso**, no grupo **Conceder**, selecione **0 controles selecionados**. Fazer isso irá exibir um painel **Conceder**.
+18. Na seção **Controles de acesso**, no grupo **Conceder**, selecione **0 controles selecionados**. Fazer isso irá exibir um painel **Conceder**.
 
-20. No painel **Conceder** que aparece, verifique se a opção **Conceder acesso** está selecionada (você pode selecioná-la, se necessário). Observe todos os controles de acesso disponíveis que podem ser habilitados com essa política. Essa política exigirá apenas MFA, portanto, marque a caixa de seleção **Exigir autenticação multifator**. Selecione o botão **Selecionar** na parte inferior do painel **Conceder**, que fechará o painel. 
+19. No painel **Conceder** que aparece, verifique se a opção **Conceder acesso** está selecionada (você pode selecioná-la, se necessário). Observe todos os controles de acesso disponíveis que podem ser habilitados com essa política. Essa política exigirá apenas MFA, portanto, marque a caixa de seleção **Exigir autenticação multifator**. Selecione o botão **Selecionar** na parte inferior do painel **Conceder**, que fechará o painel. 
 
-21. Na parte inferior da janela **Nova Política de Acesso Condicional**, no campo **Habilitar política**, selecione **Ativar**.
+20. Na parte inferior da janela **Nova Política de Acesso Condicional**, no campo **Habilitar política**, selecione **Ativar**.
 
-22. Observe a mensagem de aviso e as opções que aparecem na parte inferior da página que avisam para você não se bloquear. Selecione a opção **Eu entendo que minha conta será afetada por essa política. Continuar assim mesmo.** Na verdade, a Holly não será afetada, já que faz parte do grupo do projeto piloto do M365, que é isento dessa política.
+21. Observe a mensagem de aviso e as opções que aparecem na parte inferior da página que avisam para você não se bloquear. Selecione a opção **Eu entendo que minha conta será afetada por essa política. Continuar assim mesmo.** Na verdade, a Holly não será afetada, já que faz parte do grupo do projeto piloto do M365, que é isento dessa política.
 
-23. Selecione o botão **Criar** para criar a política.
+22. Selecione o botão **Criar** para criar a política.
 
-24. Na janela **Acesso Condicional | Políticas** que aparece, verifique se a política **MFA para todos os usuários do Microsoft 365** aparece e se seu **Estado** está definido como **Habilitada**.
+23. Na janela **Acesso Condicional | Políticas** que aparece, verifique se a política **MFA para todos os usuários do Microsoft 365** aparece e se seu **Estado** está definido como **Habilitada**.
 
-25. Permaneça conectado ao LON-CL1 com todas as guias do seu navegador Microsoft Edge abertas para a próxima tarefa.
+24. Permaneça conectado ao LON-CL1 com todas as guias do seu navegador Microsoft Edge abertas para a próxima tarefa.
 
 
 ### Tarefa 4: Testar a MFA para um usuário incluído e isento
@@ -331,13 +327,13 @@ O Diretor de Tecnologia está ansioso para implementar o Bloqueio Inteligente po
 
 16. No seu navegador, feche a guia **Alterar senha**. 
 
-17. Agora você vai testar a funcionalidade de limite de bloqueio. Você vai fazer isso usando a conta de Laura Atkin, que você criou em um exercício de laboratório anterior. Selecione o ícone de usuário da Holly Dickson no canto superior direito da tela e, no menu que aparece, selecione **Sair**.  
+17. Agora você vai testar a funcionalidade de limite de bloqueio. Você vai fazer isso usando a conta de Adele Vance. Selecione o ícone de usuário da Holly Dickson no canto superior direito da tela e, no menu que aparece, selecione **Sair**.  
 
 18. Após ter saído como Holly, a janela **Escolher uma conta** aparecerá na guia **Entrar no Microsoft Entra**. Como boa prática, ao sair de um serviço online da Microsoft como um usuário e entrar novamente como outro, feche todas as guias do seu navegador, exceto as guias **Sair** ou **Entrar**. Nesse caso, feche as outras guias agora e deixe a guia **Entrar** aberta.  <br/>
 
     Na janela **Escolher uma conta**, selecione **Usar outra conta**. 
 
-19. Na janela **Entrar**, insira**laura@xxxxxZZZZZZ.onmicrosoft.com**(em que xxxxxZZZZZZ é o prefixo de locatário atribuído a você pelo provedor de hospedagem de laboratório) e selecione **Avançar**. 
+19. Na janela **Entrar**, insira**adelev@xxxxxZZZZZZ.onmicrosoft.com**(em que xxxxxZZZZZZ é o prefixo de locatário atribuído a você pelo provedor de hospedagem de laboratório) e selecione **Avançar**. 
 
 20. Na janela **Inserir senha**, insira qualquer combinação aleatória de letras e números e selecione **Entrar**. Observe a mensagem de erro de senha inválida que aparece. 
 
@@ -345,14 +341,14 @@ O Diretor de Tecnologia está ansioso para implementar o Bloqueio Inteligente po
     
     Já que definiu o **Limite de bloqueios** como **3**, você deve receber uma mensagem de erro indicando que essa conta está bloqueada após a terceira tentativa de login com falha. <br/>
 
-    **Observação:** Se você não receber essa mensagem de bloqueio após a terceira tentativa, isso significa que o sistema ainda não terminou de propagar essa alteração do limite de bloqueios no serviço inteiro. Pode levar vários minutos para que as alterações entrem em vigor. Aguarde alguns minutos e entre novamente com uma senha falsa. Os testes desse laboratório têm apresentado resultados variados. Às vezes, a alteração é propagada quase imediatamente para que sua conta seja bloqueada após a terceira tentativa de login. Outras vezes, pode levar de 5 a 10 minutos antes que a mensagem de bloqueio seja exibida. Continue esse processo até receber a mensagem de bloqueio, quando a conta de Laura será temporariamente bloqueada para impedir o acesso não autorizado.
+    **Observação:** Se você não receber essa mensagem de bloqueio após a terceira tentativa, isso significa que o sistema ainda não terminou de propagar essa alteração do limite de bloqueios no serviço inteiro. Pode levar vários minutos para que as alterações entrem em vigor. Aguarde alguns minutos e entre novamente com uma senha falsa. Os testes desse laboratório têm apresentado resultados variados. Às vezes, a alteração é propagada quase imediatamente para que sua conta seja bloqueada após a terceira tentativa de login. Outras vezes, pode levar de 5 a 10 minutos antes que a mensagem de bloqueio seja exibida. Continue esse processo até receber a mensagem de bloqueio, quando a conta de Adele será temporariamente bloqueada para impedir o acesso não autorizado.
 
-21. Você não conseguirá fazer login novamente como Laura até que a **duração do bloqueio de 90 segundos** definida anteriormente expire. <br/>
+21. Você não conseguirá fazer login novamente como Adele até que a **duração do bloqueio de 90 segundos** definida anteriormente expire. <br/>
 
-    Após sua conta ter sido bloqueada, aguarde 90 segundos e entre novamente como **laura@xxxxxZZZZZZ.onmicrosoft.com** (em que xxxxxZZZZZZ é o prefixo de locatário atribuído a você pelo provedor de hospedagem do seu laboratório). No campo **Senha**, digite a senha de Laura, que é a Nova Senha de Usuário que você atribuiu à conta de Laura ao criá-la. 
+    Após sua conta ter sido bloqueada, aguarde 90 segundos e entre novamente como **adelev@xxxxxZZZZZZ.onmicrosoft.com** (em que xxxxxZZZZZZ é o prefixo de locatário atribuído a você pelo provedor de hospedagem do seu laboratório). No campo **Senha**, digite a senha de Adele, que é a Senha de usuário fornecida pelo provedor de hospedagem do laboratório. 
 
-22. Como a MFA está habilitada para todos os usuários, exceto para os membros do grupo do projeto piloto do M365 (do qual Laura não faz parte), uma janela **Mais informações necessárias** irá aparecer para você concluir o processo da MFA para Laura. Esta é a verificação de que sua tentativa de login usando a senha real de Laura foi bem-sucedida.  <br>
+22. Como a MFA está habilitada para todos os usuários, exceto para os membros do grupo do projeto piloto do M365 (do qual Adele não faz parte), uma janela **Mais informações necessárias** irá aparecer para você concluir o processo da MFA para Adele. Esta é a verificação de que sua tentativa de login usando a senha real de Adele foi bem-sucedida.  <br>
 
-    **Observação:** você NÃO precisa concluir o processo da MFA para Laura, pois este é seu último exercício de laboratório usando o controlador de domínio LON-DC1. Você pode fechar todos os aplicativos no LON-DC1.
+    **Observação:** você NÃO precisa concluir o processo da MFA para Adele, pois este é seu último exercício de laboratório usando o controlador de domínio LON-DC1. Você pode fechar todos os aplicativos no LON-DC1.
 
 # Prosseguir para o Laboratório 2, Exercício 2
