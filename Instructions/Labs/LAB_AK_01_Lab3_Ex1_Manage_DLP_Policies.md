@@ -131,7 +131,7 @@ O problema com esse recurso é que as políticas DLP não levam em consideraçã
 
 Para desativar essa configuração, você deve criar uma política para aplicativos do Office no centro de administração Microsoft Intune. Na política criada, você adicionará a configuração **Desativar Enviar para o Kindle** à política e, em seguida, ativará essa configuração. Ativar essa configuração na política desativará o recurso **Enviar para o Kindle** assim que você terminar de criar a política. A partir de então, os usuários não poderão mais enviar documentos do Word para a biblioteca do Kindle.
 
-**Observação:** esse problema é algo que você deve considerar abordar em suas implantações reais do Microsoft 365. Para mais informações sobre o recurso **Enviar para o Kindle**, consulte https://support.microsoft.com/en-us/office/send-to-kindle-a53d880d-9952-4bf1-abc5-6bce8db5a273.
+**Observação:** esse problema é algo que você deve considerar abordar em suas implantações reais do Microsoft 365. Para mais informações sobre o recurso **Enviar para o Kindle**, consulte https://support.microsoft.com/office/send-to-kindle-a53d880d-9952-4bf1-abc5-6bce8db5a273.
 
 1. No LON-CL1, no navegador Edge, você deve continuar conectado no Microsoft 365 como **Holly Dickson**. 
 

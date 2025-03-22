@@ -13,7 +13,7 @@ Para implementar Rótulos de confidencialidade como parte do projeto piloto na A
 
     Você ainda deve estar logado na LON-CL1 com a conta **adatum\administrador** e, no navegador Edge, ainda deve estar logado no Microsoft 365 como **Holly Dickson**. 
 
-2. No **Microsoft Edge**, abra uma nova guia e insira (ou copie e cole) a seguinte URL na barra de endereços: **https://www.microsoft.com/en-us/download/confirmation.aspx?id=53018** <br/>
+2. No **Microsoft Edge**, abra uma nova guia e insira (ou copie e cole) a seguinte URL na barra de endereços: **https://www.microsoft.com/download/details.aspx?id=53018** <br/>
 
     Isso iniciará o download para o cliente da **Proteção de Informações do Microsoft Purview**.
 
